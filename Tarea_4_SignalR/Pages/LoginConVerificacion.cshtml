@@ -76,11 +76,6 @@
             animation: spin 1s linear infinite;
             margin-right: 0.5rem;
         }
-        <!-- @@keyframes es un elementos de css, sin embargo como empieza con un @@, el compilador
-        asume que es un componenete de Razor y da error porque lo desconoce,
-        , por lo tanto tenemos que usar doble @@
-        La primer @@ actua como carcter de escape indicando que lo que viene a continuación
-        no se interprete -->
 
         @@keyframes spin {
             0% { transform: rotate(0deg); }
@@ -131,12 +126,10 @@
             loginButton.innerHTML = '<span class="processing"></span>Processing';
 
             verificationMessage.style.display = 'block';
-            // Aca tengo que mandar un mensaje al servidor notificando que un usuario se quiere loggear
             var email = document.getElementById("email").value;
             var pass = document.getElementById("password").value;
 
             console.info("Envio mensaje al Hub");
-            //Login es un metodo del hub al cual me conecto
             connection.invoke("Login", email, pass).catch(function (err) {
                 return console.error(err.toString());
             });

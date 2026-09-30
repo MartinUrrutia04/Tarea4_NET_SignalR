@@ -13,13 +13,11 @@ namespace Tarea_4_SignalR.Model
 
         public Boolean EsUsuarioValido()
         {
-            //TODO implementar lógica de autenticacion
             return true;
         }
 
         public Boolean NecesitarVerificacion()
         {
-            //TODO implmentar lógica de verificación
             return true; 
         }
 
